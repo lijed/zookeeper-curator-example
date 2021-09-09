@@ -5,7 +5,7 @@
  * use it only in accordance with the terms of the license agreement you entered
  * into with Tu.cn
  */
-package com.example.zookeepercuratorexample.app.lock;
+package com.example.zookeepercuratorexample.app.lock.demo1;
 
 import com.example.zookeepercuratorexample.ZookeeperServerConfig;
 import org.apache.curator.framework.CuratorFramework;
@@ -19,11 +19,12 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Description:
+ *  可以启动多次
  *
- * @Author: Administrator
+ * @Author: jedli
  * Created: 2021/8/19
  **/
-public class LockExamplePeer1 {
+public class LockExample {
 
 
     public static void main(String[] args) throws Exception {
@@ -40,7 +41,7 @@ public class LockExamplePeer1 {
             System.out.println("===================" + LocalTime.now().toString() + " 准备获得锁");
             locker = new Locker(interProcessMutex);
             System.out.println("===================" + LocalTime.now().toString() + " 获得锁");
-            System.out.println("Process the request!!!!");
+            System.out.println(LocalTime.now().toString() + "Process the request!!!!");
             TimeUnit.SECONDS.sleep(20);
             System.out.println("释放锁");
         } catch (Exception e) {
